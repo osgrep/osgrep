@@ -15,7 +15,7 @@ class Runner(object):
     def grep(self, expression):
         for name, service in self.services.items():
             for unit in service:
-                
+
                 kwargs = {
                     'user': unit.server.username,
                     'port': unit.server.port,
@@ -27,10 +27,10 @@ class Runner(object):
                     kwargs.update({
                         'key_filename': unit.server.identity_file
                     })
-                    
+
                 if hasattr(unit.server, 'password'):
                     kwargs.update({'password': unit.server.password})
-                    
+
                 with settings(hide("warnings", "user", "stdout", "stderr",
                                    "commands", "running"),
                               **kwargs):

@@ -78,6 +78,7 @@ class Config(object):
     def build_env(self):
         hosts = {}
         services = defaultdict(list)
+        def_identity_file = self.cfg['default-identity-file']
         for service_name, nodes in self.cfg['services'].items():
             for node in nodes:
                 hostname = node.get('host', self.cfg['default-host'])
@@ -89,7 +90,7 @@ class Config(object):
                     server.username = node.get('username',
                                                self.cfg['default-username'])
                     server.identity_file = node.get('identity-file',
-                                                self.cfg['default-identity-file'])
+                                                    def_identity_file)
                     server.password = node.get('password',
                                                self.cfg.get('password', None))
 

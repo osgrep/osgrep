@@ -22,7 +22,7 @@ class FakeService(object):
         "/var/log/**.log"
     ]
 
-    
+
 class TestRunner(unittest.TestCase):
 
     def setUp(self):
@@ -36,17 +36,17 @@ class TestRunner(unittest.TestCase):
             'path': FakeService.log_files[0],
             'expression': FakeService.name,
         })
-        
+
     def test_grep(self):
         """Check if basic runner grep functionality works"""
         r = Runner(self.services)
-                    
+
         def grep_response(script):
             script.writeline(self.template)
-        
+
         with sshim.Server(grep_response, port=1025,
                           handler=ExecHandler):
-            
+
             for response in r.grep("foo"):
                 self.assertEqual(
                     (FakeService.name, FakeServer.hostname, self.template),
