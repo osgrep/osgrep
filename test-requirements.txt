@@ -2,3 +2,4 @@ nose
 flake8
 mock
 https://github.com/niedbalski/sshim/archive/master.zip
+sphinx

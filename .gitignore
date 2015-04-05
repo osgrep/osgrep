@@ -13,3 +13,4 @@ doc/source/api/
 .coverage
 .tox/
 .venv/
+doc/build
