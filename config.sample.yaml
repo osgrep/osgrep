@@ -1,6 +1,6 @@
 default-username: ubuntu
 default-host: localhost
-default-port: 22
+default-port: 23
 default-identity-file: foobar
 services:
   nova-compute:
@@ -13,3 +13,4 @@ services:
       host: example.com
       port: 22
       identity-file: /tmp/id_rsa
+    - username: carrot
