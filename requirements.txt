@@ -1,4 +1,4 @@
 pbr<1.0
 PyYAML
 fabric
-jinja2
+Jinja2
